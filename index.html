@@ -6,15 +6,15 @@
 </head>
 
 <body>
-<!-- <h1>Morse Code!</h1>
+<h1>Morse Code!</h1>
 <div>Enter in your text!</div>
 
-<div><textarea name="name" rows="8" cols="40"></textarea></div>
+<div><textarea id="inputTextBox" name="name" rows="8" cols="40">SOS SOS</textarea></div>
 
-<div><input type="submit"/></div>
+<div><input id="submitButton" type="submit"/></div>
 
 <div>Here's your translation:</div>
-<div /> -->
+<div id="resultDiv"></div>
 
 </body>
 
@@ -35,17 +35,29 @@ function letterToMorseCode (letter) {
 function translate (textToTranslate) {
   var result = ''
 
-  for (var i = 0; i < input.length; i++) {
-    var currentLetter = input[i]
+  for (var i = 0; i < textToTranslate.length; i++) {
+    var currentLetter = textToTranslate[i]
     result = result + letterToMorseCode(currentLetter)
   }
 
   return result;
 }
 
-var input = "sos sos"
-var result = translate(input)
-console.log(result)
+
+function performTranslation() {
+  var inputTextBoxElement = document.getElementById('inputTextBox')
+
+  var input = inputTextBoxElement.value
+  var result = translate(input)
+
+  var resultElement = document.getElementById('resultDiv')
+  resultElement.innerHTML = result;
+}
+
+var submitButtonElement = document.getElementById('submitButton')
+submitButtonElement.onclick = function(){
+  performTranslation();
+}
 
 </script>
 
