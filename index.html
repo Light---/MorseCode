@@ -3,28 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Morse Code!</title>
+
 <style>
-  .left, .right {
-    float: left;
-  }
+    body {
+        padding: 30px;
+    }
 </style>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 <h1>Morse Code!</h1>
-<div class="left">
 
-  <div>Enter in your text!</div>
 
-  <div><textarea id="inputTextBox" name="name" rows="8" cols="40">Example Text...</textarea></div>
+<div class="row">
+    <div class="col-md-4">
+        <ul id="morseCodeMap"></ul>
+    </div>
 
-  <div>Here's your translation:</div>
-  <div id="resultDiv"></div>
-</div>
+    <div class="col-md-8">
 
-<div class="right">
-  <ul id="morseCodeMap">
-  </ul>
+        <h2>Enter in your text!</h2>
+
+        <div><textarea id="inputTextBox" name="name" rows="8" cols="40">Example Text...</textarea></div>
+
+        <h3>Here's your translation:</h3>
+        <div class="well">
+            <div id="resultDiv"></div>
+        </div>
+    </div>
 </div>
 
 
