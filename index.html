@@ -9,9 +9,7 @@
 <h1>Morse Code!</h1>
 <div>Enter in your text!</div>
 
-<div><textarea id="inputTextBox" name="name" rows="8" cols="40">SOS SOS</textarea></div>
-
-<div><input id="submitButton" type="submit"/></div>
+<div><textarea id="inputTextBox" name="name" rows="8" cols="40">Example Text...</textarea></div>
 
 <div>Here's your translation:</div>
 <div id="resultDiv"></div>
@@ -23,8 +21,43 @@
 
 function letterToMorseCode (letter) {
   var alphabet = {
-    'S': '...',
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
     'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '0': '-----',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '.': '.-.-.-',
     ' ': '/'
   };
 
@@ -54,11 +87,12 @@ function performTranslation() {
   resultElement.innerHTML = result;
 }
 
-var submitButtonElement = document.getElementById('submitButton')
-submitButtonElement.onclick = function(){
+var inputTextBoxElement = document.getElementById('inputTextBox')
+inputTextBoxElement.onkeydown = function(){
   performTranslation();
 }
 
+performTranslation();
 </script>
 
 
