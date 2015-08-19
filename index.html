@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Code!</title>
+</head>
+
+<body>
+<!-- <h1>Morse Code!</h1>
+<div>Enter in your text!</div>
+
+<div><textarea name="name" rows="8" cols="40"></textarea></div>
+
+<div><input type="submit"/></div>
+
+<div>Here's your translation:</div>
+<div /> -->
+
+</body>
+
+
+<script>
+
+function letterToMorseCode (letter) {
+  if(letter == 'S') {
+    return '...'
+  }
+
+  if(letter =='O'){
+    return '---'
+  }
+
+  if (letter == ' ') {
+    return '/'
+  }
+}
+
+function translate (textToTranslate) {
+  var result = ''
+
+  for (var i = 0; i < input.length; i++) {
+    var currentLetter = input[i]
+    result = result + letterToMorseCode(currentLetter)
+  }
+
+  return result;
+}
+debugger
+var input = "SOS SOS"
+var result = translate(input)
+console.log(result)
+
+</script>
+
+
+</html>
