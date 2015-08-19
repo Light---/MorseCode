@@ -22,17 +22,14 @@
 <script>
 
 function letterToMorseCode (letter) {
-  if(letter == 'S') {
-    return '...'
-  }
+  var alphabet = {
+    'S': '...',
+    'O': '---',
+    ' ': '/'
+  };
 
-  if(letter =='O'){
-    return '---'
-  }
-
-  if (letter == ' ') {
-    return '/'
-  }
+  var morseCodeLetter = alphabet[letter.toUpperCase()];
+  return morseCodeLetter;
 }
 
 function translate (textToTranslate) {
@@ -45,8 +42,8 @@ function translate (textToTranslate) {
 
   return result;
 }
-debugger
-var input = "SOS SOS"
+
+var input = "sos sos"
 var result = translate(input)
 console.log(result)
 
