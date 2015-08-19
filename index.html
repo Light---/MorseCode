@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Morse Code!</title>
+<style>
+  .left, .right {
+    float: left;
+  }
+</style>
 </head>
 
 <body>
 <h1>Morse Code!</h1>
-<div>Enter in your text!</div>
+<div class="left">
 
-<div><textarea id="inputTextBox" name="name" rows="8" cols="40">Example Text...</textarea></div>
+  <div>Enter in your text!</div>
 
-<div>Here's your translation:</div>
-<div id="resultDiv"></div>
+  <div><textarea id="inputTextBox" name="name" rows="8" cols="40">Example Text...</textarea></div>
+
+  <div>Here's your translation:</div>
+  <div id="resultDiv"></div>
+</div>
+
+<div class="right">
+  <ul id="morseCodeMap">
+  </ul>
+</div>
+
 
 </body>
-
 
 <script>
 
@@ -93,6 +106,61 @@ inputTextBoxElement.onkeydown = function(){
 }
 
 performTranslation();
+
+function populateList () {
+  var alphabet = {
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '0': '-----',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '.': '.-.-.-',
+    ' ': '/'
+  };
+
+  var result = ''
+
+  for (var letter in alphabet){
+    result = result + '<li> "' + letter + '" = ' + alphabet[letter] + '</li>'
+  }
+
+  return result
+}
+
+var morseCodeMapElement = document.getElementById('morseCodeMap')
+morseCodeMapElement.innerHTML = populateList()
+
 </script>
 
 
